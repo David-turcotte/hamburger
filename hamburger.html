@@ -1,0 +1,128 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#menu-toggle span {
+  display: block;
+  background: black;
+  border-radius: 2px;
+  transition: .25s ease-in-out;
+}
+
+#menu-toggle {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 5px;
+  left: 20px;
+  top: 11px;
+  transition: 0.5s;
+  z-index: 30;
+  display: none;  
+}
+
+#menu-toggle.change {
+  top: 10px;
+}
+
+#menu-toggle #hamburger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#menu-toggle #hamburger span {
+  width: 35px;
+  height: 5px;
+  position: relative;
+  margin: 6px 0;
+}
+
+#menu-toggle #hamburger span:nth-child(1) {
+  transition-delay: .3s;
+}
+
+#menu-toggle #hamburger span:nth-child(2) {
+  transition-delay: .425s;
+}
+
+#menu-toggle #hamburger span:nth-child(3) {
+  transition-delay: .65s;
+}
+
+#menu-toggle #cross {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+#menu-toggle #cross span:nth-child(1) {
+  height: 0%;
+  width: 5px;
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  transition-delay: 0s;
+}
+
+#menu-toggle #cross span:nth-child(2) {
+  width: 0%;
+  height: 5px;
+  top: 15px;
+  position: absolute;
+  transition-delay: .25s;
+}
+
+#menu-toggle.open #hamburger span {
+  width: 0%;
+}
+
+#menu-toggle.open #hamburger span:nth-child(1) {
+  transition-delay: 0s;
+}
+
+#menu-toggle.open #hamburger span:nth-child(2) {
+  transition-delay: .25s;
+}
+
+#menu-toggle.open #hamburger span:nth-child(3) {
+  transition-delay: .15s;
+}
+
+#menu-toggle.open #cross span:nth-child(1) {
+  height: 100%;
+  transition-delay: .525s;
+}
+
+#menu-toggle.open #cross span:nth-child(2) {
+  width: 100%;
+  transition-delay: .275s;
+}
+</style>
+
+
+<div id="menu-toggle">
+	<div id="hamburger">
+   		<span></span>
+    	<span></span>
+    	<span></span>
+  	</div>
+  	<div id="cross">
+    	<span></span>
+    	<span></span>
+  	</div>
+</div>
+
+<script>
+		//menu mobile
+
+		jQuery('#menu-toggle').click(function(event){
+		  jQuery(this).toggleClass('open');
+		  jQuery('.menu').toggleClass('open');
+
+		});
+
+</script>
